@@ -4,7 +4,7 @@ GET http://localhost:5075/games
 GET http://localhost:5075/games/1
 
 ###
-GET  http://localhost:5075/games/4
+GET  http://localhost:5075/games/1
 
 ###
 POST http://localhost:5075/games
@@ -16,3 +16,15 @@ Content-Type: application/json
     "price": 299.9,
     "releaseDate": "2018-11-18"
 }
+
+###
+PUT http://localhost:5075/games/1
+Content-Type: application/json
+
+  {
+    "name": "Call of Dut war",
+    "genre": "Adventure",
+    "price": 9.99,
+    "releaseDate": "1992-07-18"
+  }
+

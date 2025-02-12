@@ -48,10 +48,18 @@ app.MapPost("games", (CreateGameDto newGame) => {
 });
 
 //PUT/Game
-app.MapGet("games/{id}", (int id, UpdateGameDto updateGameDto)=> {
+app.MapPut("games/{id}", (int id, UpdateGameDto updateGameDto)  => {
     //find the index of the project
     var index = games.FindIndex(game => game.Id == id);
+
+    games[index] = new GameDto(
+        id, 
+        updateGameDto.Name,
+        updateGameDto.Genre,
+        updateGameDto.Price,
+        updateGameDto.ReleaseDate);
    
+   return Results.NoContent();
 
 });
 
